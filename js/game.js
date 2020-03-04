@@ -409,8 +409,8 @@ var levels = {
 	// Level data
 	data:[
 	 {// First level
-		foreground:'desert-foreground',
-		background:'clouds-background',
+		foreground:'city1-foreground',
+		background:'city1-background',
 		entities:[
 			{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
 			{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
@@ -428,8 +428,8 @@ var levels = {
 		]
 	 },
 		{   // Second level
-			foreground:'desert-foreground',
-			background:'clouds-background',
+			foreground:'city2-foreground',
+			background:'city2-background',
 			entities:[
 				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
 				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
