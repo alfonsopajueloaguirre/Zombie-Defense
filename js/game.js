@@ -56,9 +56,8 @@ var game = {
 		game.slingshotReleasedSound = loader.loadSound("audio/released");
 		game.bounceSound = loader.loadSound('audio/bounce');
 		game.breakSound = {
-			"glass":loader.loadSound('audio/glass crash'),
-			"metal":loader.loadSound('audio/metal crash'),
-			"wood":loader.loadSound('audio/wood crash')
+			"glass":loader.loadSound('audio/glassbreak'),
+			"wood":loader.loadSound('audio/woodbreak')
 		};
 
 
@@ -410,30 +409,30 @@ var levels = {
 	// Level data
 	data:[
 	 {// First level
-	 	foreground: 'foreground-forest',
-		background:'background-forest',
+		foreground:'desert-foreground',
+		background:'clouds-background',
 		entities:[
 			{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
-			{type:"ground", name:"box", x:185,y:390,width:30,height:80,isStatic:true},
+			{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
 
 			{type:"block", name:"box", x:520,y:380,angle:90,width:100,height:25},
 			{type:"block", name:"glass", x:520,y:280,angle:90,width:100,height:25},
-			{type:"villain", name:"enemy1",x:520,y:205,calories:590},
+			{type:"villain", name:"enemy2",x:520,y:205,calories:590},
 
 			{type:"block", name:"box", x:620,y:380,angle:90,width:100,height:25},
 			{type:"block", name:"glass", x:620,y:280,angle:90,width:100,height:25},
-			{type:"villain", name:"enemy2", x:620,y:205,calories:420},
+			{type:"villain", name:"enemy1", x:620,y:205,calories:420},
 
 			{type:"hero", name:"grey-bomb",x:80,y:405},
 			{type:"hero", name:"pink-bomb",x:140,y:405},
 		]
 	 },
 		{   // Second level
-			foreground:'foreground-winter',
-			background:'background-winter',
+			foreground:'desert-foreground',
+			background:'clouds-background',
 			entities:[
 				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
-				{type:"ground", name:"box", x:185,y:390,width:30,height:80,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
 
 				{type:"block", name:"box", x:820,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"box", x:720,y:380,angle:90,width:100,height:25},
@@ -443,15 +442,15 @@ var levels = {
 
 				{type:"block", name:"glass", x:670,y:255,angle:90,width:100,height:25},
 				{type:"block", name:"glass", x:770,y:255,angle:90,width:100,height:25},
-				{type:"block", name:"box", x:720,y:192.5,width:100,height:25},
+				{type:"block", name:"wood", x:720,y:192.5,width:100,height:25},
 
-				{type:"villain", name:"enemy1",x:715,y:155,calories:590},
-				{type:"villain", name:"enemy2",x:670,y:405,calories:420},
-				{type:"villain", name:"enemy3",x:765,y:400,calories:150},
+				{type:"villain", name:"enemy2",x:715,y:155,calories:590},
+				{type:"villain", name:"enemy1",x:670,y:405,calories:420},
+				{type:"villain", name:"sodacan",x:765,y:400,calories:150},
 
-				{type:"hero", name:"grey-bomb",x:30,y:415},
-				{type:"hero", name:"pink-bomb",x:80,y:405},
-				{type:"hero", name:"dynamite",x:140,y:405},
+				{type:"hero", name:"strawberry",x:30,y:415},
+				{type:"hero", name:"orange",x:80,y:405},
+				{type:"hero", name:"apple",x:140,y:405},
 			]
 		}
 	],
@@ -515,6 +514,7 @@ var entities = {
 			restitution:0.15,
 		},
 		"box":{
+			fullHealth:500,
 			density:0.7,
 			friction:0.4,
 			restitution:0.4,
@@ -524,16 +524,15 @@ var entities = {
 			friction:1.5,
 			restitution:0.2,
 		},
-		"enemy1":{
-			shape:"rectangle",
+		"enemy2":{
+			shape:"circle",
 			fullHealth:40,
-			width:40,
-			height:60,
+			radius:25,
 			density:1,
 			friction:0.5,
 			restitution:0.4,
 		},
-		"enemy2":{
+		"sodacan":{
 			shape:"rectangle",
 			fullHealth:80,
 			width:40,
@@ -542,16 +541,7 @@ var entities = {
 			friction:0.5,
 			restitution:0.7,
 		},
-		"enemy3":{
-			shape:"rectangle",
-			fullHealth:50,
-			width:40,
-			height:50,
-			density:1,
-			friction:0.5,
-			restitution:0.6,
-		},
-		"enemy4":{
+		"enemy1":{
 			shape:"rectangle",
 			fullHealth:50,
 			width:40,
@@ -574,7 +564,7 @@ var entities = {
 			friction:0.5,
 			restitution:0.4,
 		},
-		"dynamite":{
+		"strawberry":{
 			shape:"circle",
 			radius:15,
 			density:2.0,
@@ -611,9 +601,14 @@ var entities = {
 				entity.sprite = loader.loadImage("images/entities/"+entity.name+".png");
 				entity.shape = definition.shape;
 				entity.bounceSound = game.bounceSound;
-				entity.width = definition.width;
-				entity.height = definition.height;
-				box2d.createRectangle(entity,definition);
+				if(definition.shape == "circle"){
+					entity.radius = definition.radius;
+					box2d.createCircle(entity,definition);
+				} else if(definition.shape == "rectangle"){
+					entity.width = definition.width;
+					entity.height = definition.height;
+					box2d.createRectangle(entity,definition);
+				}
 				break;
 			default:
 				console.log("Undefined entity type",entity.type);
