@@ -410,6 +410,7 @@ var levels = {
 	// Level data
 	data:[
 	 {// First level
+	 	foreground: 'foreground-forest',
 		background:'background-forest',
 		entities:[
 			{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
@@ -428,6 +429,7 @@ var levels = {
 		]
 	 },
 		{   // Second level
+			foreground:'foreground-winter',
 			background:'background-winter',
 			entities:[
 				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
