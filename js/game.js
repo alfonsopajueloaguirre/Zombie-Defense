@@ -527,7 +527,8 @@ var entities = {
 		"enemy1":{
 			shape:"rectangle",
 			fullHealth:40,
-			radius:25,
+			width:40,
+			height:60,
 			density:1,
 			friction:0.5,
 			restitution:0.4,
