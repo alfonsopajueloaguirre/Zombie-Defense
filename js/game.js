@@ -56,8 +56,9 @@ var game = {
 		game.slingshotReleasedSound = loader.loadSound("audio/released");
 		game.bounceSound = loader.loadSound('audio/bounce');
 		game.breakSound = {
-			"glass":loader.loadSound('audio/glassbreak'),
-			"wood":loader.loadSound('audio/woodbreak')
+			"glass":loader.loadSound('audio/glass crash'),
+			"wood":loader.loadSound('audio/wood crash'),
+			"barrel":loader.loadSound('audio/metal crash')
 		};
 
 
@@ -622,9 +623,10 @@ var entities = {
 			restitution:0.2,
 		},
 		"enemy1":{
-			shape:"circle",
+			shape:"rectangle",
 			fullHealth:40,
-			radius:25,
+			width:40,
+			height:60,
 			density:1,
 			friction:0.5,
 			restitution:0.4,
@@ -660,21 +662,21 @@ var entities = {
 			shape:"circle",
 			radius:25,
 			density:1.5,
-			friction:0.6,
+			friction:0.7,
 			restitution:0.4,
 		},
 		"pink-bomb":{
 			shape:"circle",
 			radius:25,
 			density:1.5,
-			friction:0.6,
+			friction:0.7,
 			restitution:0.4,
 		},
 		"blue-bomb":{
 			shape:"circle",
 			radius:25,
 			density:1.5,
-			friction:0.6,
+			friction:0.7,
 			restitution:0.4,
 		},
 	},
