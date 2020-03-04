@@ -92,7 +92,7 @@ endingscreen {
 }
 
 #endingscreen p  {
-    font: 20px Comic Sans MS;
+    font: 20px Roboto;
     text-shadow: 0 0 2px #000;
 	color:white;
 }
@@ -104,7 +104,7 @@ endingscreen {
 }
 
 #endingscreen #endingmessage  {
-    font: 32px Comic Sans MS;
+    font: 32px Roboto;
     text-shadow: 0 0 2px #000;
 	color:white;
 }
