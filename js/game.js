@@ -415,13 +415,14 @@ var levels = {
 			{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
 			{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
 
-			{type:"block", name:"box", x:520,y:380,angle:90,width:100,height:25},
+			{type:"block", name:"wood", x:520,y:380,angle:90,width:100,height:25},
 			{type:"block", name:"glass", x:520,y:280,angle:90,width:100,height:25},
 			{type:"villain", name:"enemy2",x:520,y:205,calories:590},
 
-			{type:"block", name:"box", x:620,y:380,angle:90,width:100,height:25},
+			{type:"block", name:"wood", x:620,y:380,angle:90,width:100,height:25},
 			{type:"block", name:"glass", x:620,y:280,angle:90,width:100,height:25},
 			{type:"villain", name:"enemy1", x:620,y:205,calories:420},
+			{type:"block", name:"box", x:400,y:280,angle:90,width:25,height:25},
 
 			{type:"hero", name:"grey-bomb",x:80,y:405},
 			{type:"hero", name:"pink-bomb",x:140,y:405},
@@ -512,6 +513,12 @@ var entities = {
 			density:2.4,
 			friction:0.4,
 			restitution:0.15,
+		},
+		"wood":{
+			fullHealth:500,
+			density:0.7,
+			friction:0.4,
+			restitution:0.4,
 		},
 		"box":{
 			fullHealth:500,
