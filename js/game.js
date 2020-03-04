@@ -409,8 +409,8 @@ var levels = {
 	// Level data
 	data:[
 	 {// First level
-		foreground:'desert-foreground',
-		background:'clouds-background',
+		foreground:'city1-foreground',
+		background:'city1-background',
 		entities:[
 			{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
 			{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
@@ -422,22 +422,26 @@ var levels = {
 			{type:"block", name:"wood", x:620,y:380,angle:90,width:100,height:25},
 			{type:"block", name:"glass", x:620,y:280,angle:90,width:100,height:25},
 			{type:"villain", name:"enemy1", x:620,y:205,calories:420},
-			{type:"block", name:"box", x:400,y:280,angle:90,width:25,height:25},
+			{type:"block", name:"box", x:400,y:400,angle:90,width:50,height:50},
 
 			{type:"hero", name:"grey-bomb",x:80,y:405},
 			{type:"hero", name:"pink-bomb",x:140,y:405},
 		]
 	 },
 		{   // Second level
-			foreground:'desert-foreground',
-			background:'clouds-background',
+
+			foreground:'city2-foreground',
+			background:'city2-background',
 			entities:[
 				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
 				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
 
-				{type:"block", name:"box", x:820,y:380,angle:90,width:100,height:25},
-				{type:"block", name:"box", x:720,y:380,angle:90,width:100,height:25},
-				{type:"block", name:"box", x:620,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"barrel", x:550,y:400,angle:90,width:50,height:50},
+				{type:"block", name:"box", x:500,y:400,angle:90,width:50,height:50},
+
+				{type:"block", name:"wood", x:820,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:720,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:620,y:380,angle:90,width:100,height:25},
 				{type:"block", name:"glass", x:670,y:317.5,width:100,height:25},
 				{type:"block", name:"glass", x:770,y:317.5,width:100,height:25},
 
@@ -449,11 +453,91 @@ var levels = {
 				{type:"villain", name:"enemy1",x:670,y:405,calories:420},
 				{type:"villain", name:"sodacan",x:765,y:400,calories:150},
 
-				{type:"hero", name:"strawberry",x:30,y:415},
-				{type:"hero", name:"orange",x:80,y:405},
-				{type:"hero", name:"apple",x:140,y:405},
+				{type:"hero", name:"grey-bomb",x:30,y:415},
+				{type:"hero", name:"pink-bomb",x:80,y:405},
+				{type:"hero", name:"grey-bomb",x:160,y:415},
+				{type:"hero", name:"blue-bomb",x:200,y:405},
+			]
+		},
+		{   // Third level
+			foreground:'city3-foreground',
+			background:'city3-background',
+			entities:[
+				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
+
+				{type:"block", name:"box", x:400,y:400,angle:90,width:50,height:50},
+				{type:"villain", name:"enemy4",x:420,y:400,calories:150},
+
+				{type:"block", name:"wood", x:600,y:380,angle:90,width:100,height:25},
+				{type:"villain", name:"enemy2",x:620,y:405,calories:590},
+
+				{type:"block", name:"wood", x:780,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:800,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"glass", x:800,y:280,angle:90,width:100,height:25},
+				{type:"villain", name:"enemy3",x:815,y:400,calories:150},
+
+				
+
+				{type:"hero", name:"grey-bomb",x:30,y:415},
+				{type:"hero", name:"pink-bomb",x:60,y:415},
+				{type:"hero", name:"blue-bomb",x:90,y:415},
+			]
+		},
+		{   // Fourth level
+			foreground:'city4-foreground',
+			background:'city4-background',
+			entities:[
+				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
+
+				{type:"block", name:"glass", x:400,y:400,angle:90,width:100,height:25},
+				{type:"villain", name:"enemy3",x:420,y:400,calories:150},
+
+
+				{type:"block", name:"wood", x:820,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"wood", x:720,y:380,angle:90,width:100,height:25},
+				{type:"block", name:"glass", x:770,y:317.5,width:100,height:25},
+				{type:"block", name:"barrel", x:770,y:400,angle:90,width:50,height:50},
+				{type:"villain", name:"enemy4",x:770,y:390,calories:150},
+
+				{type:"block", name:"wood", x:750,y:200,angle:90,width:100,height:25},
+				{type:"villain", name:"enemy2",x:750,y:100,calories:150},
+
+
+
+				{type:"hero", name:"grey-bomb",x:30,y:415},
+				{type:"hero", name:"pink-bomb",x:60,y:415},
+				{type:"hero", name:"blue-bomb",x:90,y:415},
+
+			]
+		},
+		{   // Fifth level
+			foreground:'city5-foreground',
+			background:'city5-background',
+			entities:[
+				{type:"ground", name:"dirt", x:500,y:440,width:1000,height:20,isStatic:true},
+				{type:"ground", name:"wood", x:185,y:390,width:30,height:80,isStatic:true},
+
+				{type:"block", name:"barrel", x:400,y:400,angle:90,width:50,height:50},
+				{type:"block", name:"barrel", x:480,y:400,angle:90,width:50,height:50},
+				{type:"villain", name:"enemy2",x:440,y:400,calories:150},
+
+				{type:"block", name:"box", x:600,y:400,angle:90,width:50,height:50},
+				{type:"block", name:"box", x:600,y:350,angle:90,width:50,height:50},
+				{type:"villain", name:"enemy3",x:620,y:405,calories:590},
+
+				{type:"block", name:"wood", x:750,y:400,angle:90,width:100,height:25},
+
+
+				
+
+				{type:"hero", name:"grey-bomb",x:30,y:415},
+				{type:"hero", name:"pink-bomb",x:80,y:405},
+				{type:"hero", name:"blue-bomb",x:140,y:405},
 			]
 		}
+		
 	],
 
 	// Initialize level selection screen
@@ -520,6 +604,12 @@ var entities = {
 			friction:0.4,
 			restitution:0.4,
 		},
+		"barrel":{
+			fullHealth:500,
+			density:0.7,
+			friction:0.4,
+			restitution:0.4,
+		},
 		"box":{
 			fullHealth:500,
 			density:0.7,
@@ -531,7 +621,7 @@ var entities = {
 			friction:1.5,
 			restitution:0.2,
 		},
-		"enemy2":{
+		"enemy1":{
 			shape:"circle",
 			fullHealth:40,
 			radius:25,
@@ -539,18 +629,27 @@ var entities = {
 			friction:0.5,
 			restitution:0.4,
 		},
-		"sodacan":{
+		"enemy2":{
 			shape:"rectangle",
-			fullHealth:80,
+			fullHealth:50,
 			width:40,
 			height:60,
 			density:1,
 			friction:0.5,
 			restitution:0.7,
 		},
-		"enemy1":{
+		"enemy3":{
 			shape:"rectangle",
-			fullHealth:50,
+			fullHealth:70,
+			width:40,
+			height:50,
+			density:1,
+			friction:0.5,
+			restitution:0.6,
+		},
+		"enemy4":{
+			shape:"rectangle",
+			fullHealth:90,
 			width:40,
 			height:50,
 			density:1,
@@ -561,21 +660,21 @@ var entities = {
 			shape:"circle",
 			radius:25,
 			density:1.5,
-			friction:0.5,
+			friction:0.6,
 			restitution:0.4,
 		},
 		"pink-bomb":{
 			shape:"circle",
 			radius:25,
 			density:1.5,
-			friction:0.5,
+			friction:0.6,
 			restitution:0.4,
 		},
-		"strawberry":{
+		"blue-bomb":{
 			shape:"circle",
-			radius:15,
-			density:2.0,
-			friction:0.5,
+			radius:25,
+			density:1.5,
+			friction:0.6,
 			restitution:0.4,
 		},
 	},
@@ -601,7 +700,7 @@ var entities = {
 				// No need for sprites. These won't be drawn at all
 				box2d.createRectangle(entity,definition);
 				break;
-			case "hero":	// simple circles
+			case "hero":	
 			case "villain": // can be circles or rectangles
 				entity.health = definition.fullHealth;
 				entity.fullHealth = definition.fullHealth;
